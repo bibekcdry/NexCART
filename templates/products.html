@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - NexCart</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shopping-cart"></i>
+                <span>NexCart</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/products" class="nav-link active">Products</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="cart-icon">
+                <a href="/cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h1>Our Products</h1>
+                <div class="search-filter">
+                    <input type="text" id="search" placeholder="Search products..." class="search-box">
+                    <select id="category-filter" class="filter-dropdown">
+                        <option value="">All Categories</option>
+                    </select>
+                    <select id="sort" class="filter-dropdown">
+                        <option value="-created_at">Newest</option>
+                        <option value="price">Price: Low to High</option>
+                        <option value="-price">Price: High to Low</option>
+                        <option value="-rating">Best Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-list">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About NexCart</h3>
+                <p>Your trusted online shopping destination.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2083 NexCart. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/products.js"></script>
+</body>
+</html>
