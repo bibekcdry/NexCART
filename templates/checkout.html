@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - NexCart</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shopping-cart"></i>
+                <span>NexCart</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/products" class="nav-link">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <h1>Checkout</h1>
+            
+            <div class="checkout-container">
+                <div class="checkout-form">
+                    <form id="checkout-form">
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <h2>Shipping Address</h2>
+                            
+                            <div class="saved-addresses" id="saved-addresses">
+                                <!-- Saved addresses will load here -->
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="use-new-address">
+                                    <input type="checkbox" id="use-new-address"> Use a new address
+                                </label>
+                            </div>
+                            
+                            <div id="new-address-form" style="display:none;">
+                                <div class="form-group">
+                                    <label for="full_name">Full Name</label>
+                                    <input type="text" id="full_name" name="full_name">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="street_address">Street Address</label>
+                                    <input type="text" id="street_address" name="street_address">
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" name="city">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state" name="state">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="zip_code">Zip Code</label>
+                                        <input type="text" id="zip_code" name="zip_code">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country">Country</label>
+                                        <input type="text" id="country" name="country" value="Nepal">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h2>Payment Method</h2>
+                            
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="credit_card" checked>
+                                    <i class="fas fa-credit-card"></i>
+                                    Credit Card
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="debit_card">
+                                    <i class="fas fa-credit-card"></i>
+                                    Debit Card
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="bank_transfer">
+                                    <i class="fas fa-university"></i>
+                                    Bank Transfer
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="digital_wallet">
+                                    <i class="fas fa-wallet"></i>
+                                    Digital Wallet
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="cash_on_delivery">
+                                    <i class="fas fa-money-bill"></i>
+                                    Cash on Delivery
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <h2>Order Notes (Optional)</h2>
+                            <textarea id="notes" name="notes" placeholder="Add any special instructions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="place-order-btn">Place Order</button>
+                    </form>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="order-items">
+                        <!-- Order items will load here -->
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="summary-subtotal">Rs. 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (13%):</span>
+                        <span id="summary-tax">Rs. 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="summary-shipping">Rs. 50</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="summary-total">Rs. 0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2083 NexCart. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/checkout.js"></script>
+</body>
+</html>
